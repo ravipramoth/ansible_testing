@@ -7,4 +7,5 @@
         name: test_key
         region : us-east-2
       register: keyout
-      var: keyout
+- debug:
+    var: keyout
