@@ -10,3 +10,7 @@
       register: keyout
     - debug:
        var: keyout
+    - name: Sore login key
+      copy:
+        content: "{{keyout.private_key}}"
+        des: ./test_key.pem
