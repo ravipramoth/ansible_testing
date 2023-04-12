@@ -6,5 +6,5 @@
       ec2_key:
         name: test_key
         region : us-east-2
-  register: keyout
+      register: keyout
   var: keyout
