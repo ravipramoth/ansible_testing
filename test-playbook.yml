@@ -8,5 +8,5 @@
         name: test_key
         region: us-east-2
       register: keyout
-- debug: null
-  var: keyout
+  - debug: null
+      var: keyout
