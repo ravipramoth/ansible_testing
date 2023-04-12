@@ -1,9 +1,12 @@
+---
 - hosts: localhost
   connection: local
-  gather_facts: False
+  gather_facts: false
   tasks:
     - name: sample ec2 key
       ec2_key:
         name: test_key
-        region : us-east-2
+        region: us-east-2
       register: keyout
+- debug: null
+  var: keyout
