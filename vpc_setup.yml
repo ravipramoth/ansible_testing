@@ -96,7 +96,7 @@
     - debug:
         var: igw_out
     - name: Setup public subnet route table
-      ec2_vpc_route:
+      ec2_vpc_route_table:
         vpc_id: "{{ vpcout.vpc.id }}"
         region: "{{region}}"
         tags:
