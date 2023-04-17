@@ -2,10 +2,10 @@
   connection: local
   gather_facts: false
   tasks:
-    - name : Import VPC variables
+    - name: Import VPC variables
       include_vars: vars/vpc_setup
 
-    - name : create vprofice VPC
+    - name: create vprofice VPC
         ec2_vpc_net:
           name: "{{vpc_name}}"
           cidr_block: "{{vpc_cider}}"
