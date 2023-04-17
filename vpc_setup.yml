@@ -26,7 +26,7 @@
         map_public: yes
         resourse_tags:
           Name: vprofile-pubsub1
-        register: PubSub1Cidr
+      register: PubSub1Cidr
     - debug:
         var: PubSub1Cidr
 
