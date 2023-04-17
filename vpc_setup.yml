@@ -92,6 +92,6 @@
         state: "{{state}}"
         resource_tags:
           Name: Internet_gateway
-        register: igwout
+      register: igwout
 
 
