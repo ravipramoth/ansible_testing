@@ -92,9 +92,9 @@
         state: "{{state}}"
         resource_tags:
           Name: Internet_gateway
-      register: igwout
+      register: igw_out
     - debug:
-        var: igwout
+        var: igw_out
     - name: Setup public subnet route table
       ec2_vpc_route:
         vpc_id: "{{ vpcout.vpc.id }}"
