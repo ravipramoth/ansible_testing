@@ -1,18 +1,17 @@
 - hosts: localhost
   connection: local
   gather_facts: false
+  tasks:
+    - name : Import VPC variables
+      include_vars: vars/vpc_setup
 
-tasks:
-  - name : Import VPC variables
-    include_vars: vars/vpc_setup
-
-  - name : create vprofice VPC
-      ec2_vpc_net:
-        name: "{{vpc_name}}"
-        cidr_block: "{{vpc_cider}}"
-        region: "{{region}}"
-        dns_support: yes
-        dns_hostnames: yes
-        tenancy: default
-        state: "{{state}}"
-      registry: vpc_out
+    - name : create vprofice VPC
+        ec2_vpc_net:
+          name: "{{vpc_name}}"
+          cidr_block: "{{vpc_cider}}"
+          region: "{{region}}"
+          dns_support: yes
+          dns_hostnames: yes
+          tenancy: default
+          state: "{{state}}"
+        registry: vpc_out
