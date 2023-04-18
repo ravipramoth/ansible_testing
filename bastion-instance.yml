@@ -42,7 +42,7 @@
         key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
-        image_id: "{{ bastion_ami }}"
+        image: "{{ bastion_ami }}"
         wait: yes
         wait_timeout: 300
         tags:
@@ -50,7 +50,7 @@
           Project: Vprofile
           Owner: DevOps Team
         count: 1
-        security_group: "{{BastionSG_out.group_id}}"
+        group_id: "{{BastionSG_out.group_id}}"
         vpc_subnet_id: "{{pubsub1id}}"
       register: bastionHost_out
 
