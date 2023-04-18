@@ -76,10 +76,6 @@
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
-        count_tag:
-          Name: "web01"
-          Project: Vprofile
-          Owner: DevOps Team
         security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: web01_out
@@ -97,10 +93,6 @@
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
-        count_tag:
-          Name: "app01"
-          Project: Vprofile
-          Owner: DevOps Team
         security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: app01_out
@@ -118,10 +110,6 @@
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
-        count_tag:
-          Name: "mc01"
-          Project: Vprofile
-          Owner: DevOps Team
         security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: mc01_out
@@ -139,10 +127,6 @@
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
-        count_tag:
-          Name: "rmq01"
-          Project: Vprofile
-          Owner: DevOps Team
         security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: rmq01_out
@@ -160,10 +144,6 @@
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
-        count_tag:
-          Name: "db01"
-          Project: Vprofile
-          Owner: DevOps Team
         security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: db01_out
