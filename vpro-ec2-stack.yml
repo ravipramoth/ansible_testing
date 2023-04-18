@@ -85,14 +85,14 @@
       register: web01_out
 
     - name: Creating tomcat app01
-      ec2:
+      ec2_instance:
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{tomcat_ami}}"
         wait: yes
         wait_timeout: 300
-        instance_tags:
+        tags:
           Name: "app01"
           Project: Vprofile
           Owner: DevOps Team
@@ -101,19 +101,19 @@
           Name: "app01"
           Project: Vprofile
           Owner: DevOps Team
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: app01_out
 
     - name: Creating memcache mc01
-      ec2:
+      ec2_instance:
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{memcache_ami}}"
         wait: yes
         wait_timeout: 300
-        instance_tags:
+        tags:
           Name: "mc01"
           Project: Vprofile
           Owner: DevOps Team
@@ -122,19 +122,19 @@
           Name: "mc01"
           Project: Vprofile
           Owner: DevOps Team
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: mc01_out
 
     - name: Creating RabbitMQ rmq01
-      ec2:
+      ec2_instance:
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{rmq_ami}}"
         wait: yes
         wait_timeout: 300
-        instance_tags:
+        tags:
           Name: "rmq01"
           Project: Vprofile
           Owner: DevOps Team
@@ -143,19 +143,19 @@
           Name: "rmq01"
           Project: Vprofile
           Owner: DevOps Team
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: rmq01_out
 
     - name: Creating Mysql db01
-      ec2:
+      ec2_instance:
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{mysql_ami}}"
         wait: yes
         wait_timeout: 300
-        instance_tags:
+        tags:
           Name: "db01"
           Project: Vprofile
           Owner: DevOps Team
@@ -164,7 +164,7 @@
           Name: "db01"
           Project: Vprofile
           Owner: DevOps Team
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: db01_out
 
