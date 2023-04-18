@@ -21,7 +21,7 @@
         mode: 0600
       when: vprokey_out.changed
 
-- name: Create Securiry Group for Load Balancer
+    - name: Create Securiry Group for Load Balancer
       ec2_group:
         name: vproELB-sg
         description: Allow port 80 from everywhere and all port within sg
