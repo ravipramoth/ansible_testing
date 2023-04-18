@@ -64,14 +64,14 @@
           - proto: all
             group_id: "{{vproStackSG_out.group_id}}"
     - name: Creating Nginx web01
-      ec2:
+      ec2_instance:
         key_name: vprokey
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{nginx_ami}}"
         wait: yes
         wait_timeout: 300
-        instance_tags:
+        tags:
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
@@ -80,7 +80,7 @@
           Name: "web01"
           Project: Vprofile
           Owner: DevOps Team
-        group_id: "{{vproStackSG_out.group_id}}"
+        security_group: "{{vproStackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: web01_out
 
