@@ -150,4 +150,3 @@
 
     - debug:
         var: db01_out
-        vars: db01_out.instance_id
