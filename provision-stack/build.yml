@@ -20,7 +20,8 @@
         dest: ./Vprofile-repo
         version: vp-rem
       register: git_status
-
+    - debug:
+        var: git_status
 
     - name: mvn install command to build artifact
       command: "mvn install"
@@ -28,6 +29,8 @@
         chdir: Vprofile-repo
       when: git_status.changed
       register: mvn_info
+    - debug:
+        var: mvn_info
 
 
     - name: Copy artifacts to files directory
