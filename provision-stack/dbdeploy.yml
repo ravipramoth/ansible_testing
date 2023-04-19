@@ -5,7 +5,7 @@
   tasks:
     - name: Copy SQL to dbsrv
       copy:
-        src: files/db_backup.sql
+        src: /home/ubuntu/ansible_testing/provision-stack/group_vars/files/db_backup.sql
         dest: /tmp/db_backup.sql
       tags:
         - deploy
