@@ -38,13 +38,23 @@
       tags:
         - package
 
-    - name: Install Rabbit MQ
+    - name: Update package repository
+      become: true
+      apt:
+        update_cache: yes
+
+    - name: Upgrade packages
+      become: true
+      apt:
+        upgrade: yes
+
+    - name: Install rabbitmq-server
+      become: true
       apt:
         name: rabbitmq-server
         state: present
-        update_cache: yes
-      tags:
-        - package
+        version: 3.11.13-1
+
 
 
     - name: Start & Enable RMQ
