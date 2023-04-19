@@ -1,6 +1,10 @@
 upstream vproapp {
  server app01:8080;
 }
+upstream mysql {
+    server 172.20.4.149:3306;
+    sticky route $cookie_mysqlroute;
+}
 server {
   listen 80;
 location / {
