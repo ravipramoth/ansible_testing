@@ -33,7 +33,7 @@
         - package
 
     - apt_repository:
-        repo: ddeb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
+        repo: deb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
         state: present
       tags:
         - package
