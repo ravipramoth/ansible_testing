@@ -62,6 +62,7 @@
         src: templates/tomcat8-ubuntu-svcfile.j2
         dest: /etc/systemd/system/tomcat8.service
         mode: "a+x"
+        remote_src: yes
 
     - name: just force systemd to reread configs (2.4 and above)
       systemd:
