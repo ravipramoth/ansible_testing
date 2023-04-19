@@ -61,8 +61,7 @@
       template:
         src: /home/ubuntu/ansible_testing/provision-stack/templates/tomcat8-ubuntu-svcfile.j2
         dest: /etc/systemd/system/tomcat8.service
-        mode: "a+x"
-        remote_src: yes
+        mode: "0644"
 
     - name: just force systemd to reread configs (2.4 and above)
       systemd:
