@@ -33,7 +33,7 @@
         - package
 
     - apt_repository:
-        repo: deb [signed-by=/usr/share/keyrings/net.launchpad.ppa.rabbitmq.erlang.gpg] http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu bionic main
+        repo: ddeb https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/ bionic main
         state: present
       tags:
         - package
