@@ -51,11 +51,7 @@
     - name: Install rabbitmq-server
       become: true
       apt:
-        name: rabbitmq-server
-        state: present
-        version: 3.11.13-1
-
-
+        name: rabbitmq-server=3.11.13-1
 
     - name: Start & Enable RMQ
       service:
