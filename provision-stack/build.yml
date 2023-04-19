@@ -44,7 +44,7 @@
 
     - name: Copy SQL file to files directory
       copy:
-        src: Vprofile-repo/src/main/resources/db_backup.sql
+        src: /home/ubuntu/ansible_testing/provision-stack/Vprofile-repo/src/main/resources/db_backup.sql
         dest: files/db_backup.sql
 
         # ###   - name: Copy artifacts to files directory
