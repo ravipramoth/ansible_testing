@@ -29,7 +29,13 @@
       when: git_status.changed
       register: mvn_info
 
-
+    - name: Create destination directory
+      file:
+        path: /home/ubuntu/ansible_testing/provision-stack/group_vars/files
+        state: directory
+      register: file_create
+    - debug:
+        var: file_create
     - name: Copy artifacts to files directory
       copy:
         src: "{{item}}"
